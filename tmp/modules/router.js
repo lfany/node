@@ -2,10 +2,10 @@
  * Created by dp on 2016/11/21.
  */
 
-function route(handle, pathName, res, postData) {
+function route(handle, pathName, res, req) {
     console.log('About to route a request for ' + pathName);
     if(typeof handle[pathName] === 'function'){
-        handle[pathName](res, postData);
+        handle[pathName](res, req);
     }else{
         console.log('No request handler found for' + pathName);
         res.writeHead(404, {'Content-Type': 'test/plain'});
