@@ -4,7 +4,7 @@
 
 var exec = require('child_process').exec;
 
-function start() {
+function start(res) {
     console.log('Request handler `start` was called.')
 
     function sleep(millSeconds) {
@@ -12,18 +12,20 @@ function start() {
         while (new Date().getTime() < startTime + millSeconds);
     }
 
-    sleep(10000);
-    var content = 'empty';
+    // sleep(10000);
 
     exec('ls -alh', (error, stdout, stderr) => {
-       content = stdout;
+       res.writeHead(200, {'Content-Type': 'text/plain'});
+       res.write(stdout);
+       res.end();
     });
-    return content;
 }
 
-function upload() {
+function upload(res) {
     console.log('Request handler `upload` was called.')
-    return 'Hello Upload';
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.write('Hello upload!')
+    res.end();
 }
 
 exports.start = start;
