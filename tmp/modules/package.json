@@ -1,0 +1,24 @@
+{
+  "name": "tmp",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfany/node.git"
+  },
+  "author": "huaixiaoz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfany/node/issues"
+  },
+  "homepage": "https://github.com/lfany/node#readme",
+  "dependencies": {
+    "formidable": "^1.0.17",
+    "mv": "^2.1.1"
+  }
+}
